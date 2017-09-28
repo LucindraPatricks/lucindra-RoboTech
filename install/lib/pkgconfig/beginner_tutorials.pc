@@ -1,0 +1,8 @@
+prefix=/home/tudeng/lucindra-RoboTech/install
+
+Name: beginner_tutorials
+Description: Description of beginner_tutorials
+Version: 0.0.0
+Cflags: -I/home/tudeng/lucindra-RoboTech/install/include
+Libs: -L/home/tudeng/lucindra-RoboTech/install/lib 
+Requires: message_runtime
