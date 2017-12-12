@@ -1,0 +1,5 @@
+<launch>
+<node name="pubPoint" pkg="point_visualizer" type="pubPoint" />
+<node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="1 0.0 0.0 0.0 0.0 0.0 map felina 100" />
+<node name="rviz" pkg="rviz" type="rviz"/>
+</launch>
