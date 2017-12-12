@@ -5,6 +5,25 @@
 #include "message_filters/subscriber.h"
 #include <sstream>
 
+ros::NodeHandle n;
+ros::Publisher chatter_pub=n.advertise<geometry_msgs::PointStamped>("pointStamp", 1000);
+
+void chatterCallback(const geometry_msgs::Point msg)
+{
+  //ROS_INFO("I heard: [%s]", msg->data.c_str());
+    geometry_msgs::PointStamped point_out;
+    point_out.point= msg;
+    point_out.header.frame_id= "felina";
+
+     /**
+     * The publish() function is how you send messages. The parameter
+     * is the message object. The type of this object must agree with the type
+     * given as a template parameter to the advertise<>() call, as was done
+     * in the constructor above.
+     */
+    chatter_pub.publish(point_out);
+}
+
 /**
  * This tutorial demonstrates simple sending of messages over the ROS system.
  */
@@ -27,7 +46,7 @@ int main(int argc, char **argv)
    * The first NodeHandle constructed will fully initialize this node, and the last
    * NodeHandle destructed will close down the node.
    */
-  ros::NodeHandle n;
+  //ros::NodeHandle n;
 
   /**
    * The advertise() function is how you tell ROS that you want to
@@ -46,40 +65,13 @@ int main(int argc, char **argv)
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
-  ros::Publisher chatter_pub=n.advertise<geometry_msgs::PointStamped>("pointStamp", 1000);
+  ros::Subscriber sub = n.subscribe("mouse", 1000, chatterCallback);
 
-  ros::Rate loop_rate(10);
-
-  /**
-   * A count of how many messages we have sent. This is used to create
-   * a unique string for each message.
-   */
-  int count = 0;
-  while (ros::ok())
-  {
-    /**
-     * This is a message object. You stuff it with data, and then publish it.
-     */
-    geometry_msgs::PointStamped point_out;
-    point_out.point.x=5.603264;
-    point_out.point.y=4.276489;
-    point_out.point.z=3.555500;
-    point_out.header.frame_id= "122";
+  //ros::Rate loop_rate(10);
+  ros::spin();
 
 
-    /**
-     * The publish() function is how you send messages. The parameter
-     * is the message object. The type of this object must agree with the type
-     * given as a template parameter to the advertise<>() call, as was done
-     * in the constructor above.
-     */
-    chatter_pub.publish(point_out);
 
-    ros::spinOnce();
-
-    loop_rate.sleep();
-    ++count;
-  }
 
 
   return 0;
