@@ -1,0 +1,8 @@
+prefix=/home/tudeng/lucindra-RoboTech/install
+
+Name: mouse_reader
+Description: Description of mouse_reader
+Version: 0.0.0
+Cflags: -I/home/tudeng/lucindra-RoboTech/install/include
+Libs: -L/home/tudeng/lucindra-RoboTech/install/lib 
+Requires: message_runtime

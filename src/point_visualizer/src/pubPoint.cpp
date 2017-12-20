@@ -5,6 +5,12 @@
 #include "message_filters/subscriber.h"
 #include <sstream>
 
+
+
+ros::NodeHandle n;
+ros::Publisher chatter_pub=n.advertise<geometry_msgs::PointStamped>("pointStamp", 1000);
+
+
 void chatterCallback(const geometry_msgs::Point msg)
 {
   //ROS_INFO("I heard: [%s]", msg->data.c_str());
@@ -62,17 +68,14 @@ int main(int argc, char **argv)
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
-  ros::NodeHandle n;
-  ros::Publisher chatter_pub=n.advertise<geometry_msgs::PointStamped>("pointStamp", 1000);
-  ros::Subscriber sub = n.subscribe("mouse", 1000, chatterCallback);
+
 
   //ros::Rate loop_rate(10);
   ros::spin();
 
 
-
+  ros::Subscriber sub = n.subscribe("mouse", 1000, chatterCallback);
 
 
   return 0;
 }
-

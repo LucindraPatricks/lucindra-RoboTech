@@ -9,5 +9,5 @@ def process_event(event):
     return Point(2.0,4.0,0.0)
 
 while not rospy.is_shutdown():
-    pub.publish(hello_str)
+    pub.publish(process_event(0))
     rate.sleep()

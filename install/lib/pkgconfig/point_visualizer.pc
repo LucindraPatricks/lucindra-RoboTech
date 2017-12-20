@@ -1,0 +1,8 @@
+prefix=/home/tudeng/lucindra-RoboTech/install
+
+Name: point_visualizer
+Description: Description of point_visualizer
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tudeng/lucindra-RoboTech/install/lib 
+Requires: 
