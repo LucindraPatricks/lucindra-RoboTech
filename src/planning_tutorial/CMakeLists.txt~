@@ -107,7 +107,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS include
   LIBRARIES planning_tutorial
   CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs moveit_msgs moveit_ros_planning_interface
   DEPENDS system_lib
@@ -120,7 +120,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-#  include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -202,16 +202,6 @@ add_dependencies(planning_tutorial ${catkin_EXPORTED_TARGETS})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-include_directories(include ${catkin_INCLUDE_DIRS})
-
-
-
-add_executable(move_group_interface_tutorial src/move_group_interface_tutorial.cpp)
-target_link_libraries(move_group_interface_tutorial ${catkin_LIBRARIES})
-#add_dependencies(move_group_interface_tutorial point_visualizer_generate_messages_cpp)
-
-
 
 find_package(catkin REQUIRED COMPONENTS moveit_ros_planning_interface)
 message("moveit_core_INCLUDE_DIRS ${moveit_core_INCLUDE_DIRS}")

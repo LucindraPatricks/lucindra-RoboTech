@@ -13,7 +13,7 @@
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "move_group_interface_tutorial");
-  ROS_INFO("----Node started");
+  ROS_INFO("---------------------------------------------------------Node started");
   ros::NodeHandle node_handle;
   ros::AsyncSpinner spinner(1);
   spinner.start();
