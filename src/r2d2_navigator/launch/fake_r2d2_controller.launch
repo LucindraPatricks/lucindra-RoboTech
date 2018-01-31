@@ -1,7 +1,0 @@
-<launch>
-     <include file="$(find my_r2d2)/launch/r2d2.launch"/>
-     <node name="turtle_teleop_key" pkg="turtlesim" type="turtle_teleop_key"/>
-     <node name="fake_r2d2_controller" pkg="r2d2_navigator" type="fake_r2d2_controller">
-     <remap from="cmd_vel" to="turtle1/cmd_vel"/>
-     </node>  
-</launch>

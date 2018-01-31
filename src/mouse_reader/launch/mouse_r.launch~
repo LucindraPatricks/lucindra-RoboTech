@@ -1,3 +1,0 @@
-<launch>
-<node name="mouse_r" pkg="mouse_reader" type="mouse_r" />
-</launch>
