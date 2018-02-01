@@ -1,0 +1,33 @@
+controller_list:
+  - name: fake_first_man_controller
+    joints:
+      - h1_joint_s
+      - h1_joint_l
+      - h1_joint_e
+      - h1_joint_u
+      - h1_joint_r
+      - h1_joint_b
+      - h1_joint_t
+  - name: fake_second_man_controller
+    joints:
+      - h2_shoulder_pan_joint
+      - h2_shoulder_lift_joint
+      - h2_elbow_joint
+      - h2_wrist_1_joint
+      - h2_wrist_2_joint
+      - h2_wrist_3_joint
+  - name: fake_dual_man_controller
+    joints:
+      - h1_joint_s
+      - h1_joint_l
+      - h1_joint_e
+      - h1_joint_u
+      - h1_joint_r
+      - h1_joint_b
+      - h1_joint_t
+      - h2_shoulder_pan_joint
+      - h2_shoulder_lift_joint
+      - h2_elbow_joint
+      - h2_wrist_1_joint
+      - h2_wrist_2_joint
+      - h2_wrist_3_joint
