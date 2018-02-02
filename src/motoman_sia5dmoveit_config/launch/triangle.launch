@@ -1,5 +1,0 @@
-<launch>
-  <include file="$(find motoman_sia5dmoveit_config)/launch/demo.launch"/>
-  <node name="triangularpath" pkg="motoman_sia5dmoveit_config" type="triangularpath">
-  </node>
-</launch>
