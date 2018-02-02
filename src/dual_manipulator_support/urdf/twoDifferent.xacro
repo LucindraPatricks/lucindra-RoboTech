@@ -11,6 +11,7 @@
         <box size="2 1 0.2"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="white"/>
     </visual>
     <collision>
       <geometry>
